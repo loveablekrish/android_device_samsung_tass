@@ -209,6 +209,9 @@ private:
     uint32_t    getInputSampleRate(uint32_t sampleRate);
     bool        checkOutputStandby();
     status_t    doRouting(AudioStreamInMSM72xx *input);
+#ifdef HAVE_FM_RADIO
+    status_t    setFmOnOff(bool onoff);
+#endif
     AudioStreamInMSM72xx*   getActiveInput_l();
 
     class AudioStreamOutMSM72xx : public AudioStreamOut {
